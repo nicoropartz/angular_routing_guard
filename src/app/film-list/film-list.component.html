@@ -1,0 +1,8 @@
+<h2>My Films</h2>
+<ul class="heroes">
+  <li *ngFor="let film of films"
+    [class.selected]="film === selectedFilm"
+    (click)="onSelect(film)">
+    <span class="badge">{{film.annee}}</span> {{film.titre}}
+  </li>
+</ul>

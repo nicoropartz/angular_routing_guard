@@ -14,12 +14,12 @@ export class FilmListComponent implements OnInit {
   films : Film[];
   selectedFilm : Film;
 
-  getHeroes(): void {
-    this.filmService.getFilms().then(film => this.films = film);
+  getFilms(): void {
+    this.filmService.getFilms().subscribe(film => this.films = film);
   }
 
   ngOnInit(): void {
-    this.getHeroes();
+    this.getFilms();
   }
 
   onSelect (film : Film) {

@@ -1,6 +1,3 @@
 export class Film {
-    titre : string;
-    annee : number;
-    realisateur : string;
-    pays : string;
+    constructor(public id : string, public titre : string, public annee : number, realisateur : string, pays : string) { }
 }

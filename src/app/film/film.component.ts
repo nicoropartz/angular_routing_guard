@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 import {FilmService} from '../service/film.service';
-import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/switchMap';
+import { Observable } from 'rxjs/Observable';
 
 import { Film } from '../model/Film';
 
@@ -17,13 +17,16 @@ export class FilmComponent implements OnInit {
 
   constructor(private route : ActivatedRoute, private router : Router, private service : FilmService) { }
 
+  film$ : Observable<Film>;
 
-  ngOnInit() 
-  {
 
-    this.film$ = this.route.paramMap
-    .switchMap((params: ParamMap) =>
-      this.service.getFilm(params.get('id')));
+  ngOnInit() {
+      this.film$ = this.route.paramMap.switchMap((params: ParamMap, index : Number) =>
+        this.service.getFilm(params.get('id'))
+      );
   }
 
+  onclickBack() {
+    this.router.navigate(['/films']);
+  }
 }

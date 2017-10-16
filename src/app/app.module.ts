@@ -7,12 +7,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {FilmsModule} from './films/films.module';
 
 import {AppRoutingModule} from './app-routing.module';
+import { AddSallesComponent } from './add-salles/add-salles.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SallesComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AddSallesComponent
   ],
   imports: [
     BrowserModule,

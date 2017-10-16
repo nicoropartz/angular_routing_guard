@@ -1,3 +1,5 @@
-<p>
-  film works!
-</p>
+<div *ngIf="film$ | async as film">
+    {{film.titre}}
+</div>
+
+<button (click)="onclickBack()">Back</button>
